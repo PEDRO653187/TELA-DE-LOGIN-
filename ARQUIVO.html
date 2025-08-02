@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Profissional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .container h2 {
+      margin-bottom: 25px;
+    }
+
+    .container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    .container input::placeholder {
+      color: #eee;
+    }
+
+    .container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00c3ff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    .container button:hover {
+      background-color: #0099cc;
+    }
+
+    .toggle-password {
+      color: #ddd;
+      font-size: 13px;
+      cursor: pointer;
+      display: block;
+      margin-top: -5px;
+      margin-bottom: 15px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      color: #fff;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Login ao Sistema</h2>
+    <form id="loginForm">
+      <input type="text" id="usuario" placeholder="Usuário ou Email" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <span class="toggle-password" onclick="toggleSenha()">👁 Mostrar/Esconder Senha</span>
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="links">
+      <a href="#">Esqueci a senha</a>
+      <a href="#">Criar conta</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleSenha() {
+      const senha = document.getElementById("senha");
+      senha.type = senha.type === "password" ? "text" : "password";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const user = document.getElementById("usuario").value.trim();
+      const pass = document.getElementById("senha").value.trim();
+
+      if (!user || !pass) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+
+      // Simulação de login
+      alert("Login bem-sucedido! (Exemplo para GitHub)");
+    });
+  </script>
+
+</body>
+</html>
